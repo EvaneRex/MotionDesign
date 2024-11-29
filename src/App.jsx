@@ -1,4 +1,5 @@
 import gsap from "gsap";
+import Tree from "./components/tree_star";
 
 gsap.to(".logo", {
   duration: 2,
@@ -11,7 +12,7 @@ function App() {
   return (
     <>
       <div>
-        <div className="logo"></div>
+        <Tree />
       </div>
     </>
   );
