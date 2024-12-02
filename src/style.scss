@@ -2,9 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
-/* For the background, this enables control of where the center of the radial is positioned. The colors also gets to be controlled by stating where the the colors should start*/
+// For the background, this enables control of where the center of the radial is positioned. The colors also gets to be controlled by stating where the the colors should start
 #root {
   background: radial-gradient(
     circle at 50% 75%,
@@ -16,26 +17,27 @@
   height: 100vh;
 }
 
+//This is for the tree
 #Layer_2 {
   height: 40vh;
   width: auto;
-}
-.cls-1 {
-  fill: #ffec5f;
-}
+  .cls-1 {
+    fill: #ffec5f;
+  }
 
-.cls-2 {
-  fill: #f2f2f2;
-}
+  .cls-2 {
+    fill: #f2f2f2;
+  }
 
-.cls-3 {
-  fill: #3f2500;
-}
+  .cls-3 {
+    fill: #3f2500;
+  }
 
-.cls-4 {
-  fill: #234b2c;
-}
+  .cls-4 {
+    fill: #234b2c;
+  }
 
-.cls-5 {
-  fill: #e6e6e6;
+  .cls-5 {
+    fill: #e6e6e6;
+  }
 }
