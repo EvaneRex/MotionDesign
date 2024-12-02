@@ -1,3 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* For the background, this enables control of where the center of the radial is positioned. The colors also gets to be controlled by stating where the the colors should start*/
+#root {
+  background: radial-gradient(circle at 50% 75%, #f9f1d7 1%, #445d7b 40%, #2a3d54 70%);
+  width: 100vw;
+  height: 100vh;
+}
+
+#Layer_2 {
+  height: 40vh;
+  width: auto;
+}
+
 .cls-1 {
   fill: #ffec5f;
 }
