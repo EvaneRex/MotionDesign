@@ -7,13 +7,14 @@
 // For the background, this enables control of where the center of the radial is positioned. The colors also gets to be controlled by stating where the the colors should start
 #root {
   background: radial-gradient(
-    circle at 50% 75%,
+    circle at 50% 85%,
     #f9f1d7 1%,
     #445d7b 40%,
     #2a3d54 70%
   );
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 //This is for the tree
@@ -45,12 +46,13 @@
     fill: #e6e6e6;
   }
 }
-
+// This is the landscape underneath
 #foreground {
   fill: #f5f8ff;
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: auto;
   z-index: 2;
 }
 #middleground {
@@ -58,5 +60,10 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: auto;
   z-index: 1;
+}
+
+.greeting {
+  z-index: 4;
 }

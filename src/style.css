@@ -5,9 +5,10 @@
 }
 
 #root {
-  background: radial-gradient(circle at 50% 75%, #f9f1d7 1%, #445d7b 40%, #2a3d54 70%);
+  background: radial-gradient(circle at 50% 85%, #f9f1d7 1%, #445d7b 40%, #2a3d54 70%);
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 #tree {
@@ -40,6 +41,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: auto;
   z-index: 2;
 }
 
@@ -48,5 +50,10 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: auto;
   z-index: 1;
+}
+
+.greeting {
+  z-index: 4;
 }/*# sourceMappingURL=style.css.map */

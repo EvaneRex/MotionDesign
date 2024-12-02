@@ -1,6 +1,7 @@
 import Tree from "./components/tree_star";
 import Snow from "./components/snow";
 import Landscape from "./components/landscape";
+import ChristmasGreeting from "./components/christmasTxt";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Snow />
       <Landscape />
       <Tree />
+      <ChristmasGreeting />
     </>
   );
 }
