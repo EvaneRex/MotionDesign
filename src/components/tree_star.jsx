@@ -5,7 +5,7 @@ export default function Tree() {
     <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        id="Layer_2"
+        id="tree"
         data-name="Layer 2"
         viewBox="0 0 146.07 234.47"
       >

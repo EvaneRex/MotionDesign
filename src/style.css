@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 #root {
@@ -11,22 +10,43 @@
   height: 100vh;
 }
 
-#Layer_2 {
-  height: 40vh;
+#tree {
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  height: 50vh;
   width: auto;
 }
-#Layer_2 .cls-1 {
+#tree .cls-1 {
   fill: #ffec5f;
 }
-#Layer_2 .cls-2 {
+#tree .cls-2 {
   fill: #f2f2f2;
 }
-#Layer_2 .cls-3 {
+#tree .cls-3 {
   fill: #3f2500;
 }
-#Layer_2 .cls-4 {
+#tree .cls-4 {
   fill: #234b2c;
 }
-#Layer_2 .cls-5 {
+#tree .cls-5 {
   fill: #e6e6e6;
+}
+
+#foreground {
+  fill: #f5f8ff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+#middleground {
+  fill: #dcdce2;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
 }/*# sourceMappingURL=style.css.map */

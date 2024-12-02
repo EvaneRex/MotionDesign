@@ -1,15 +1,13 @@
 import Tree from "./components/tree_star";
 import Snow from "./components/snow";
+import Landscape from "./components/landscape";
 
 function App() {
   return (
     <>
-      <div className="snow-container">
-        <Snow />
-      </div>
-      <div landscape>
-        <Tree />
-      </div>
+      <Snow />
+      <Landscape />
+      <Tree />
     </>
   );
 }

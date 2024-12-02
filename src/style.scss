@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 // For the background, this enables control of where the center of the radial is positioned. The colors also gets to be controlled by stating where the the colors should start
@@ -18,8 +17,13 @@
 }
 
 //This is for the tree
-#Layer_2 {
-  height: 40vh;
+#tree {
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  height: 50vh;
   width: auto;
   .cls-1 {
     fill: #ffec5f;
@@ -40,4 +44,19 @@
   .cls-5 {
     fill: #e6e6e6;
   }
+}
+
+#foreground {
+  fill: #f5f8ff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+}
+#middleground {
+  fill: #dcdce2;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
 }
