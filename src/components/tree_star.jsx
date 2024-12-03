@@ -9,7 +9,6 @@ export default function Tree() {
         data-name="Layer 2"
         viewBox="0 0 146.07 234.47"
       >
-        <defs></defs>
         <g id="Layer_2-2" data-name="Layer 2">
           <g>
             <g>

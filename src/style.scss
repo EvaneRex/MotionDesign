@@ -16,6 +16,9 @@
   height: 100vh;
   overflow: hidden;
 }
+h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
 
 //This is for the tree
 #tree {
@@ -63,7 +66,28 @@
   height: auto;
   z-index: 1;
 }
-
-.greeting {
+// This is for the snow
+.snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; // Allow clicks through the snowfall
+  overflow: hidden;
   z-index: 4;
+
+  .snowflake {
+    position: absolute;
+    top: -2vh; // Starts above viewport
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  }
+}
+.greeting {
+  z-index: 50;
 }
