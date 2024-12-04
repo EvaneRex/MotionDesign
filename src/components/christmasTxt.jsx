@@ -12,5 +12,5 @@ export default function ChristmasGreeting(isVisible) {
     }
   }, [isVisible]);
 
-  return <h1 className="greeting">Merry Christmas</h1>;
+  return <h1>Merry Christmas</h1>;
 }

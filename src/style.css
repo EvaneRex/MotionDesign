@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Festive";
+  src: url(./assets/Festive-Regular.ttf);
+}
 #root {
   background: radial-gradient(circle at 50% 85%, #f9f1d7 1%, #445d7b 40%, #2a3d54 70%);
   width: 100vw;
@@ -12,7 +16,11 @@
 }
 
 h1 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Festive";
+  font-size: 2.5rem;
+  color: red;
+  margin: 5rem auto;
+  z-index: 50;
 }
 
 #tree {
@@ -77,8 +85,4 @@ h1 {
   border-radius: 50%;
   opacity: 0.8;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-}
-
-.greeting {
-  z-index: 50;
 }/*# sourceMappingURL=style.css.map */

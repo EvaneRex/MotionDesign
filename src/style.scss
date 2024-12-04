@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: "Festive";
+  src: url(./assets/Festive-Regular.ttf);
+}
 
 // For the background, this enables control of where the center of the radial is positioned. The colors also gets to be controlled by stating where the the colors should start
 #root {
@@ -17,7 +21,11 @@
   overflow: hidden;
 }
 h1 {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Festive";
+  font-size: 2.5rem;
+  color: red;
+  margin: 5rem auto;
+  z-index: 50;
 }
 
 //This is for the tree
@@ -87,7 +95,4 @@ h1 {
     opacity: 0.8;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
   }
-}
-.greeting {
-  z-index: 50;
 }
