@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 //notes from https://codepen.io/rohaidAli/pen/KKJjgpm?editors=1010 with adjustments. Might add some svgs instead, later, maybe some thing where the mouse affects the snow. idk
