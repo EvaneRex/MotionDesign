@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 @font-face {
-  font-family: "Festive";
-  src: url(./assets/Festive-Regular.ttf);
+  font-family: "Lobster";
+  src: url(./assets/Lobster-Regular.ttf);
 }
 
 // For the background, this enables control of where the center of the radial is positioned. The colors also gets to be controlled by stating where the the colors should start
@@ -21,10 +21,12 @@
   overflow: hidden;
 }
 h1 {
-  font-family: "Festive";
+  font-family: "Lobster";
   font-size: 2.5rem;
-  color: red;
-  margin: 5rem auto;
+  color: white;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  margin: 7rem auto;
   z-index: 50;
 }
 

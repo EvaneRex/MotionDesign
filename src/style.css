@@ -5,8 +5,8 @@
 }
 
 @font-face {
-  font-family: "Festive";
-  src: url(./assets/Festive-Regular.ttf);
+  font-family: "Lobster";
+  src: url(./assets/Lobster-Regular.ttf);
 }
 #root {
   background: radial-gradient(circle at 50% 85%, #f9f1d7 1%, #445d7b 40%, #2a3d54 70%);
@@ -16,10 +16,12 @@
 }
 
 h1 {
-  font-family: "Festive";
+  font-family: "Lobster";
   font-size: 2.5rem;
-  color: red;
-  margin: 5rem auto;
+  color: white;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  margin: 7rem auto;
   z-index: 50;
 }
 
