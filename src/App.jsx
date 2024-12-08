@@ -6,14 +6,21 @@ import NewYearGreeting from "./components/newYearGreeting";
 
 function App() {
   return (
-    <>
-      <Snow />
-      <Landscape />
-      <Tree />
-      <ChristmasGreeting />
-      <NewYearGreeting />
-    </>
+    <main>
+      <div>
+        <ChristmasGreeting />
+        <Tree />
+        <Snow />
+        <Landscape />
+      </div>
+      <div className="new_year">
+        <NewYearGreeting />
+      </div>
+    </main>
   );
 }
 
 export default App;
+
+// This is just inspo for later
+// https://codepen.io/creativeocean/pen/qBbBLyB

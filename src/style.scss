@@ -9,7 +9,7 @@
 }
 
 // For the background, this enables control of where the center of the radial is positioned. The colors also gets to be controlled by stating where the the colors should start
-#root {
+body {
   background: radial-gradient(
     circle at 50% 85%,
     #f9f1d7 1%,
@@ -18,8 +18,8 @@
   );
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
+
 h1 {
   font-family: "Lobster";
   font-size: 2.5rem;
@@ -30,6 +30,10 @@ h1 {
   z-index: 50;
 }
 
+.new_year {
+  height: 100vh;
+  background-color: #2a3d54;
+}
 //This is for the tree
 #tree {
   position: absolute;
@@ -81,8 +85,8 @@ h1 {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none; // Allow clicks through the snowfall
   overflow: hidden;
   z-index: 4;

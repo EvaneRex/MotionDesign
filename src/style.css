@@ -8,11 +8,15 @@
   font-family: "Lobster";
   src: url(./assets/Lobster-Regular.ttf);
 }
-#root {
+body {
   background: radial-gradient(circle at 50% 85%, #f9f1d7 1%, #445d7b 40%, #2a3d54 70%);
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+.new-year {
+  background: radial-gradient(circle at 50% 95%, #445d7b 2%, #2a3d54 40%, #16202c 70%);
 }
 
 h1 {
@@ -72,8 +76,8 @@ h1 {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
   overflow: hidden;
   z-index: 4;
