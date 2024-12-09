@@ -3,8 +3,36 @@ import Snow from "./components/snow";
 import Landscape from "./components/landscape";
 import ChristmasGreeting from "./components/christmasTxt";
 import NewYearGreeting from "./components/newYearGreeting";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useEffect, useState } from "react";
+
+// Register plugin
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  const [isVisible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const newYearElement = document.querySelector(".new_year");
+      if (newYearElement) {
+        const rect = newYearElement.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          setVisible(true);
+        } else {
+          setVisible(false);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <main>
       <div className="christmas">
@@ -14,7 +42,7 @@ function App() {
         <Landscape />
       </div>
       <div className="new_year">
-        <NewYearGreeting />
+        <NewYearGreeting isVisible={isVisible} />
       </div>
     </main>
   );

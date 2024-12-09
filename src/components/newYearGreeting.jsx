@@ -1,16 +1,12 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import ScrollTrigger from "gsap/ScrollTrigger";
 
-// Register the plugin
-gsap.registerPlugin(ScrollTrigger);
-
-export default function NewYearGreeting(isVisible) {
+export default function NewYearGreeting({ isVisible }) {
   const NYRef = useRef(null);
 
   useGSAP(() => {
-    if (isVisible) {
+    if (isVisible && NYRef.current) {
       gsap.fromTo(
         NYRef.current,
         { opacity: 0, y: "100vh", x: 0, scale: 0 },
