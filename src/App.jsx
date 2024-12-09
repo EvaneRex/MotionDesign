@@ -7,7 +7,7 @@ import NewYearGreeting from "./components/newYearGreeting";
 function App() {
   return (
     <main>
-      <div>
+      <div className="christmas">
         <ChristmasGreeting />
         <Tree />
         <Snow />

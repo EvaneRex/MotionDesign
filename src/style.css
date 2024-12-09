@@ -9,14 +9,8 @@
   src: url(./assets/Lobster-Regular.ttf);
 }
 body {
-  background: radial-gradient(circle at 50% 85%, #f9f1d7 1%, #445d7b 40%, #2a3d54 70%);
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
-}
-
-.new-year {
-  background: radial-gradient(circle at 50% 95%, #445d7b 2%, #2a3d54 40%, #16202c 70%);
 }
 
 h1 {
@@ -25,8 +19,18 @@ h1 {
   color: white;
   letter-spacing: 0.1rem;
   text-align: center;
-  margin: 7rem auto;
+  padding: 7rem auto;
   z-index: 50;
+}
+
+.christmas {
+  height: 100vh;
+  background: radial-gradient(circle at 50% 85%, #f9f1d7 1%, #445d7b 40%, #2a3d54 70%);
+}
+
+.new_year {
+  height: 100vh;
+  background-color: #2a3d54;
 }
 
 #tree {
