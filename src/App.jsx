@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const [isVisible, setVisible] = useState(false);
 
+  // This is to ensure that the NY text shows up when its scrolled to
   useEffect(() => {
     const handleScroll = () => {
       const newYearElement = document.querySelector(".new_year");

@@ -14,7 +14,7 @@ export default function NewYearGreeting({ isVisible }) {
           opacity: 1,
           y: 150,
           x: 0,
-          duration: 5,
+          duration: 3,
           ease: "back.inOut",
           scale: 1,
         }
