@@ -1,3 +1,3 @@
 export default function NewYearGreeting() {
-  return <h1>Happy New Year!</h1>;
+  return <h2>Happy New Year!</h2>;
 }

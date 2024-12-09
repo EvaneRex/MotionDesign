@@ -1,15 +1,21 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
+import { useGSAP } from "@gsap/react"; // Imports the hook, its supposed to handle the cleanup part
+import ScrollTrigger from "gsap/ScrollTrigger";
 
-//notes from https://codepen.io/rohaidAli/pen/KKJjgpm?editors=1010 with adjustments. Might add some svgs instead, later, maybe some thing where the mouse affects the snow. idk
+// Notes from https://codepen.io/rohaidAli/pen/KKJjgpm?editors=1010 with adjustments.
+
+//registers the plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const Snow = () => {
   const snowContainerRef = useRef(null);
+  const [opacity, setOpacity] = useState(1); // For the snow to fade when scrolling
 
+  // GSAP animation for snowflakes
   useGSAP(() => {
     const container = snowContainerRef.current;
-    if (!container) return;
+    if (!container) return; // Checks if the container is valid, if its not, the snow wont fall
 
     const snowflakes = [];
 
@@ -46,12 +52,30 @@ const Snow = () => {
         }
       );
     });
-
-    // Return animations for cleanup
-    return animations;
   });
 
-  return <div ref={snowContainerRef} className="snow-container"></div>;
+  // Scroll using the scrolltrigger plugin, to ensure that the snow disapears when the newyear box is in full view
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: snowContainerRef.current,
+      start: "top top", // Starts when the top of the container is at the top
+      end: "bottom top", // Ends when the bottom of the container is at the top of the viewport
+      scrub: true, // Smoothly animates based on scroll position
+      onUpdate: (self) => {
+        // This updates the opacity based on the scroll position
+        const newOpacity = 1 - Math.min(self.progress, 1);
+        gsap.to(snowContainerRef.current, { opacity: newOpacity });
+      },
+    });
+  }, []);
+
+  return (
+    <div
+      ref={snowContainerRef}
+      className="snow-container"
+      style={{ opacity: opacity }} // Apply opacity from scroll effect
+    ></div>
+  );
 };
 
 export default Snow;
