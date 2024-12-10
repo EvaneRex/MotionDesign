@@ -8,6 +8,10 @@
   src: url(./assets/Lobster-Regular.ttf);
 }
 
+.body {
+  overflow-x: hidden;
+}
+
 h1,
 h2 {
   font-family: "Lobster";
@@ -60,6 +64,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 
   // For adding 2025 behind the text WIP
   h2::before {

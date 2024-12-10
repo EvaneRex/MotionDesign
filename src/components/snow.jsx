@@ -34,7 +34,7 @@ const Snow = () => {
       // Random fall distance and duration
       const fallDistance = 40 + Math.random() * 20; // The vertical distance
       const duration = 5 + Math.random() * 20; // Time to complete the fall
-
+      const opacity = Math.random() * 0.5 + 0.5; // Random opacity
       // GSAP animation: snowflakes fall from above the viewport and to the bottom
       return gsap.fromTo(
         snowflake,
@@ -44,7 +44,7 @@ const Snow = () => {
         },
         {
           y: `100vh`, // Fall to the bottom
-          opacity: 0.8, // Slight fade
+          opacity: opacity, // Slight fade
           x: `+=${Math.random() * 15 - 5}vw`, // Slight horizontal drift
           duration: duration,
           repeat: -1, // Infinite loop

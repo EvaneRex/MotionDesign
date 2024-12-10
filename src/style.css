@@ -8,6 +8,10 @@
   font-family: "Lobster";
   src: url(./assets/Lobster-Regular.ttf);
 }
+.body {
+  overflow-x: hidden;
+}
+
 h1,
 h2 {
   font-family: "Lobster";
@@ -53,6 +57,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .new_year h2::before {
   position: absolute;
