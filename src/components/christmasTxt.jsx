@@ -9,12 +9,12 @@ export default function ChristmasGreeting({ isVisible }) {
     if (textRef.current && isVisible) {
       gsap.fromTo(
         textRef.current,
-        { opacity: 0, y: 0, x: 0, scale: 0 },
+        { opacity: 0, y: 700, x: 0, scale: 0 },
         {
           opacity: 1,
           y: 150,
           x: 0,
-          duration: 5,
+          duration: 3,
           ease: "power4.inOut",
           scale: 1,
         }
