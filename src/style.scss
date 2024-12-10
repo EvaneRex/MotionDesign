@@ -31,13 +31,23 @@ h2 {
 .new_year {
   height: 100vh;
   background-color: #2a3d54;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   // For adding 2025 behind the text WIP
+
   h2::before {
     position: absolute;
+    top: -80%;
+    left: 50%;
+    transform: translateX(-50%);
     content: "2025";
-    font-size: 4rem;
+    font-size: 7.5rem;
     color: transparent;
-    z-index: 48;
+    z-index: -1;
+    -webkit-text-stroke: #ff0000 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.2rem;
   }
 }
 //This is for the tree
