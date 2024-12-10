@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react"; // Imports the hook, its supposed to handle the cleanup part
 import ScrollTrigger from "gsap/ScrollTrigger"; // Importing the ScrollTrigger plugin
@@ -33,7 +33,7 @@ const Snow = () => {
     snowflakes.forEach((snowflake) => {
       // Random fall distance and duration
       const fallDistance = 40 + Math.random() * 20; // The vertical distance
-      const duration = 5 + Math.random() * 3; // Time to complete the fall
+      const duration = 5 + Math.random() * 20; // Time to complete the fall
 
       // GSAP animation: snowflakes fall from above the viewport and to the bottom
       return gsap.fromTo(

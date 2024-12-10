@@ -2,6 +2,7 @@ import NewYearGreeting from "./newYearGreeting";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect, useState } from "react";
+import Stars from "./stars";
 
 // Register plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -33,6 +34,7 @@ function NewYearApp() {
   return (
     <div className="new_year">
       <NewYearGreeting isVisible={isVisible} />
+      <Stars />
     </div>
   );
 }
