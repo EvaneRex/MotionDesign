@@ -8,8 +8,6 @@
   src: url(./assets/Lobster-Regular.ttf);
 }
 
-// For the background, this enables control of where the center of the radial is positioned. The colors also gets to be controlled by stating where the the colors should start
-
 h1,
 h2 {
   font-family: "Lobster";
@@ -26,7 +24,7 @@ h2 {
     #f9f1d7 1%,
     #445d7b 40%,
     #2a3d54 70%
-  );
+  ); // For the background, this enables control of where the center of the radial is positioned. The colors also gets to be controlled by stating where the the colors should start
 }
 .new_year {
   height: 100vh;
@@ -50,8 +48,8 @@ h2 {
     letter-spacing: 0.2rem;
   }
 }
-//This is for the tree
 
+//This is for the tree
 #tree {
   position: absolute;
   bottom: 1%;
@@ -80,6 +78,7 @@ h2 {
     fill: #e6e6e6;
   }
 }
+
 // This is the landscape underneath
 #foreground {
   fill: #f5f8ff;
