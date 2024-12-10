@@ -56,11 +56,11 @@ const Snow = () => {
   });
 
   // Scroll using the scrolltrigger plugin, to ensure that the snow disapears when the newyear box is in full view
-  useEffect(() => {
+  useGSAP(() => {
     ScrollTrigger.create({
       trigger: snowContainerRef.current,
       start: "top top", // Starts when the top of the container is at the top
-      end: "bottom top", // Ends when the bottom of the container is at the top of the viewport
+      end: "bottom 30%", // Ends when the bottom of the container is at the top of the viewport
       scrub: true, // Smoothly animates based on scroll position
       onUpdate: (self) => {
         // This updates the opacity based on the scroll position

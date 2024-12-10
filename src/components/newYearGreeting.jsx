@@ -17,6 +17,7 @@ export default function NewYearGreeting({ isVisible }) {
           duration: 3,
           ease: "expo.inOut",
           scale: 1,
+          delay: 1,
         }
       );
     }
