@@ -21,10 +21,15 @@ h2 {
   height: 100vh;
   background: radial-gradient(
     circle at 50% 85%,
-    #f9f1d7 1%,
-    #445d7b 40%,
-    #2a3d54 70%
+    rgba(0, 36, 72, 1) 0%,
+    rgb(21, 109, 105) 25%,
+    rgba(1, 55, 88, 1) 50%,
+    rgba(10, 15, 20, 1) 100%
   ); // For the background, this enables control of where the center of the radial is positioned. The colors also gets to be controlled by stating where the the colors should start
+  h1 {
+    position: relative;
+    top: 10%;
+  }
 
   // This is for the snow
   .snow-container {
