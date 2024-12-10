@@ -31,6 +31,14 @@ h2 {
 .new_year {
   height: 100vh;
   background-color: #2a3d54;
+  // For adding 2025 behind the text WIP
+  h2::before {
+    position: absolute;
+    content: "2025";
+    font-size: 4rem;
+    color: transparent;
+    z-index: 48;
+  }
 }
 //This is for the tree
 

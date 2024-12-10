@@ -27,6 +27,13 @@ h2 {
   height: 100vh;
   background-color: #2a3d54;
 }
+.new_year h2::before {
+  position: absolute;
+  content: "2025";
+  font-size: 4rem;
+  color: transparent;
+  z-index: 48;
+}
 
 #tree {
   position: absolute;
