@@ -3,6 +3,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect, useState } from "react";
 import Stars from "./stars";
+import { useGSAP } from "@gsap/react";
 
 // Register plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -10,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 function NewYearApp() {
   const [isVisible, setVisible] = useState(false);
 
-  useEffect(() => {
+  useGSAP(() => {
     const handleScroll = () => {
       const newYearElement = document.querySelector(".new_year");
       if (newYearElement) {

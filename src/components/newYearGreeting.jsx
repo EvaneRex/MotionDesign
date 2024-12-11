@@ -5,6 +5,7 @@ import { useRef } from "react";
 export default function NewYearGreeting({ isVisible }) {
   const NYRef = useRef(null);
 
+  // Gsap animation: Checks if the new years box is visible and plays the animation
   useGSAP(() => {
     if (isVisible && NYRef.current) {
       gsap.fromTo(
@@ -15,7 +16,7 @@ export default function NewYearGreeting({ isVisible }) {
           y: 0,
           x: 0,
           duration: 3,
-          ease: "expo.in",
+          ease: "elastic",
           scale: 1,
           delay: 1,
         }

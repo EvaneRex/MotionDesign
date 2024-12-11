@@ -1,10 +1,11 @@
+import { useGSAP } from "@gsap/react";
 import ChristmasGreeting from "./christmasTxt";
 import Landscape from "./landscape";
 import Snow from "./snow";
 import Tree from "./tree_star";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // Register plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -12,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 function ChristmasApp() {
   const [isVisible, setVisible] = useState(false);
 
-  useEffect(() => {
+  useGSAP(() => {
     const handleScroll = () => {
       const newYearElement = document.querySelector(".christmas");
       if (newYearElement) {

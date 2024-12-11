@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 export default function Tree() {
+  // GSAP animation: Makes the star rotate around its center and swing back and forth
   useGSAP(() => {
     gsap.to(".treeStar", {
       duration: 0.8,
@@ -9,8 +10,8 @@ export default function Tree() {
       yoyo: true,
       ease: "sine.inOut",
       rotation: 5,
-      startAt: { rotation: -3 },
-      transformOrigin: "center",
+      startAt: { rotation: -3 }, // Starts the animation further out. Ensures thats the animation is symmetrical
+      transformOrigin: "center", // What makes it rotate at its center
     });
   }, []);
 

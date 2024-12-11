@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 export default function ChristmasGreeting({ isVisible }) {
   const textRef = useRef(null);
-
+  // GSAP animation: Checks if the christmas scene is visible and plays the animation
   useGSAP(() => {
     if (textRef.current && isVisible) {
       gsap.fromTo(
