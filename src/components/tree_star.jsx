@@ -1,6 +1,19 @@
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 export default function Tree() {
+  useGSAP(() => {
+    gsap.to(".treeStar", {
+      duration: 0.8,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      rotation: 5,
+      startAt: { rotation: -3 },
+      transformOrigin: "center",
+    });
+  }, []);
+
   return (
     <>
       <svg
@@ -58,7 +71,7 @@ export default function Tree() {
             </g>
             {/** This is the star!! */}
             <polygon
-              className="cls-1"
+              className="treeStar"
               points="76.09 0 81.6 16.98 99.46 16.98 85.01 27.48 90.53 44.46 76.09 33.97 61.64 44.46 67.16 27.48 52.71 16.98 70.57 16.98 76.09 0"
             />
           </g>
