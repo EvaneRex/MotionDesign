@@ -61,11 +61,17 @@ h2 {
 }
 .new_year {
   height: 102vh;
-  background-color: #0a0f14;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(10, 15, 20, 1) 0%,
+    rgb(1, 17, 27) 25%,
+    rgba(0, 36, 72, 1) 80%,
+    rgb(21, 109, 105) 100%
+  );
 
   // For adding 2025 behind the text WIP
   h2::before {
@@ -80,7 +86,6 @@ h2 {
     -webkit-text-stroke: #ff0000 1px;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 0.2rem;
-    opacity: 1;
   }
 
   .stars {

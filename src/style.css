@@ -54,11 +54,11 @@ h2 {
 
 .new_year {
   height: 102vh;
-  background-color: #0a0f14;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, rgb(10, 15, 20) 0%, rgb(1, 17, 27) 25%, rgb(0, 36, 72) 80%, rgb(21, 109, 105) 100%);
 }
 .new_year h2::before {
   position: absolute;
@@ -72,7 +72,6 @@ h2 {
   -webkit-text-stroke: #ff0000 1px;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 0.2rem;
-  opacity: 1;
 }
 .new_year .stars {
   position: absolute;
