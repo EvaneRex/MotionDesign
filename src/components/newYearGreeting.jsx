@@ -9,13 +9,13 @@ export default function NewYearGreeting({ isVisible }) {
     if (isVisible && NYRef.current) {
       gsap.fromTo(
         NYRef.current,
-        { opacity: 0, y: "-50vh", x: 0, scale: 0 },
+        { opacity: 0, y: "-40vh", x: 0, scale: 0 },
         {
           opacity: 1,
           y: 0,
           x: 0,
           duration: 3,
-          ease: "expo.inOut",
+          ease: "expo.in",
           scale: 1,
           delay: 1,
         }

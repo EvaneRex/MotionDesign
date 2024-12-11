@@ -60,7 +60,7 @@ h2 {
   }
 }
 .new_year {
-  height: 100vh;
+  height: 105vh;
   background-color: #0a0f14;
   display: flex;
   justify-content: center;
@@ -80,21 +80,9 @@ h2 {
     -webkit-text-stroke: #ff0000 1px;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 0.2rem;
-    opacity: 0;
-    animation: fadeIn 6s ease-in 3s forwards;
+    opacity: 1;
   }
 
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
   .stars {
     position: absolute;
     width: 100%;
