@@ -1,18 +1,37 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useRef } from "react";
 
 export default function Tree() {
-  // GSAP animation: Makes the star rotate around its center and swing back and forth
+  const starRef = useRef(null);
+
+  // GSAP animation: Makes the star rotate around its center and swing back and forth on hover!
   useGSAP(() => {
-    gsap.to(".treeStar", {
-      duration: 0.8,
+    const animation = gsap.to(starRef.current, {
+      duration: 0.3,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut",
       rotation: 5,
       startAt: { rotation: -3 }, // Starts the animation further out. Ensures thats the animation is symmetrical
       transformOrigin: "center", // What makes it rotate at its center
+      paused: true,
     });
+
+    // Function to handle mouseover and mouseout events
+    const handleMouseOver = () => animation.play(); // Starts the animation
+    const handleMouseOut = () => animation.pause(); // Ends the animation
+
+    // Stores the starRef in a variable
+    const starElement = starRef.current;
+
+    // Adding and removing eventlisteners.
+    starElement.addEventListener("mouseover", handleMouseOver);
+    starElement.addEventListener("mouseout", handleMouseOut);
+    return () => {
+      starElement.removeEventListener("mouseover", handleMouseOver);
+      starElement.removeEventListener("mouseout", handleMouseOut);
+    };
   }, []);
 
   return (
@@ -73,6 +92,7 @@ export default function Tree() {
             {/** This is the star!! */}
             <polygon
               className="treeStar"
+              ref={starRef}
               points="76.09 0 81.6 16.98 99.46 16.98 85.01 27.48 90.53 44.46 76.09 33.97 61.64 44.46 67.16 27.48 52.71 16.98 70.57 16.98 76.09 0"
             />
           </g>
