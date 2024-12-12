@@ -35,7 +35,7 @@ function NewYearApp() {
   return (
     <div className="new_year">
       <NewYearGreeting isVisible={isVisible} />
-      <Stars />
+      <Stars isVisible={isVisible} />
     </div>
   );
 }
