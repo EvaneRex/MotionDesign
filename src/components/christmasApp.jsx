@@ -38,7 +38,7 @@ function ChristmasApp() {
     <div className="christmas">
       <ChristmasGreeting isVisible={isVisible} />
       <Tree />
-      <Snow isVisible={isVisible} />
+      <Snow />
       <Landscape />
     </div>
   );

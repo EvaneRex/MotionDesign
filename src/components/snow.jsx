@@ -1,6 +1,5 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react"; // Imports the hook, its supposed to handle the cleanup part
 import ScrollTrigger from "gsap/ScrollTrigger"; // Importing the ScrollTrigger plugin
 
 // Notes from https://codepen.io/rohaidAli/pen/KKJjgpm?editors=1010 with adjustments.
@@ -11,14 +10,13 @@ gsap.registerPlugin(ScrollTrigger);
 const Snow = () => {
   const snowContainerRef = useRef(null);
 
-  // GSAP animation for snowflakes
-  useGSAP(() => {
+  useEffect(() => {
     const container = snowContainerRef.current; // Gets the DOM element for the container
-    if (!container) return; // Checks if the container is valid, if its not, the snow wont fall
+    if (!container) return; // Checks if the container is valid, if it's not, the snow won't fall
 
     const snowflakes = []; // Array to store the snowflakes
 
-    // Creates and appends the snowflakes to the containter
+    // Creates and appends the snowflakes to the container
     for (let i = 0; i < 80; i++) {
       const snowflake = document.createElement("div");
       snowflake.className = "snowflake";
@@ -30,11 +28,12 @@ const Snow = () => {
     }
 
     // Animate each of the snowflakes
-    snowflakes.forEach((snowflake) => {
+    const animations = snowflakes.map((snowflake) => {
       // Random fall distance and duration
       const fallDistance = 40 + Math.random() * 20; // The vertical distance
       const duration = 5 + Math.random() * 20; // Time to complete the fall
       const opacity = Math.random() * 0.5 + 0.5; // Random opacity
+
       // GSAP animation: snowflakes fall from above the viewport and to the bottom
       return gsap.fromTo(
         snowflake,
@@ -53,22 +52,55 @@ const Snow = () => {
         }
       );
     });
-  });
 
-  // Scroll using the scrolltrigger plugin, to ensure that the snow disapears when the newyear box is in full view
-  useGSAP(() => {
+    // Scroll using the ScrollTrigger plugin, to ensure that the snow animations only run when the container is in view
     ScrollTrigger.create({
-      trigger: snowContainerRef.current,
-      start: "top top", // Starts when the top of the container is at the top
-      end: "bottom 30%", // Ends when the bottom of the container is at the top of the viewport
-      scrub: true, // Smoothly animates based on scroll position
-      onUpdate: (self) => {
-        // This updates the opacity based on the scroll position
-        gsap.to(snowContainerRef.current, {
-          opacity: 1 - Math.min(self.progress, 1),
+      trigger: container,
+      start: "top bottom", // Starts when the top of the container enters the viewport
+      end: "bottom 30%", // Ends when the bottom of the container leaves the viewport
+      onEnter: () => {
+        animations.forEach((anim) => anim.play()); // Resume animations when entering the view
+        gsap.to(container, {
+          visibility: "visible",
+          opacity: 1,
+          duration: 0.5,
+          ease: "power1.out",
+        }); // Ensure container is visible with easing
+      },
+      onLeave: () => {
+        animations.forEach((anim) => anim.pause()); // Pause animations when leaving the view
+        gsap.to(container, {
+          opacity: 0,
+          duration: 0.2,
+          ease: "power1.in",
+          onComplete: () => gsap.set(container, { visibility: "hidden" }),
+        }); // Hide container when out of view with easing
+      },
+      onEnterBack: () => {
+        animations.forEach((anim) => anim.play()); // Resume animations when scrolling back into view
+        gsap.to(container, {
+          visibility: "visible",
+          opacity: 1,
+          duration: 0.5,
+          ease: "power1.out",
+        });
+      },
+      onLeaveBack: () => {
+        animations.forEach((anim) => anim.pause()); // Pause animations when scrolling out of view
+        gsap.to(container, {
+          opacity: 0,
+          duration: 0.2,
+          ease: "power1.in",
+          onComplete: () => gsap.set(container, { visibility: "hidden" }),
         });
       },
     });
+
+    // Cleanup function to revert animations and unregister ScrollTrigger
+    return () => {
+      animations.forEach((anim) => anim.kill()); // Kill all animations
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); // Remove ScrollTrigger instances
+    };
   }, []); // Only runs once when the component is mounted
 
   return <div ref={snowContainerRef} className="snow-container"></div>;
