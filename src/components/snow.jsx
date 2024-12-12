@@ -8,7 +8,7 @@ import ScrollTrigger from "gsap/ScrollTrigger"; // Importing the ScrollTrigger p
 // Registers the plugin
 gsap.registerPlugin(ScrollTrigger);
 
-const Snow = () => {
+const Snow = ({ isVisible }) => {
   const snowContainerRef = useRef(null);
 
   // GSAP animation for snowflakes

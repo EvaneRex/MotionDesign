@@ -1,3 +1,7 @@
+/**
+ *  This is the tree_star component. Its responsible for rendering the tree and the star on top of it, it also mangages the animation for the star.
+ */
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useRef } from "react";
@@ -8,12 +12,12 @@ export default function Tree() {
   // GSAP animation: Makes the star rotate around its center and swing back and forth on hover!
   useGSAP(() => {
     const animation = gsap.to(starRef.current, {
-      duration: 0.3,
+      duration: 0.6,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut",
-      rotation: 5,
-      startAt: { rotation: -3 }, // Starts the animation further out. Ensures thats the animation is symmetrical
+      rotation: 6,
+      startAt: { rotation: -4 }, // Starts the animation further out. Ensures thats the animation is symmetrical
       transformOrigin: "center", // What makes it rotate at its center
       paused: true,
     });
