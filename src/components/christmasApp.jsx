@@ -34,12 +34,12 @@ function ChristmasApp() {
   }, []);
 
   return (
-    <div className="christmas">
+    <section className="christmas">
       <ChristmasGreeting isVisible={isVisible} />
       <Tree />
       <Snow />
       <img src=".\src\assets\landscape.svg" alt="" className="landscape" />
-    </div>
+    </section>
   );
 }
 

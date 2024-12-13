@@ -5,9 +5,9 @@ function App() {
   return (
     <main>
       <ChristmasApp />
-      <div className="middle">
+      <section className="middle">
         <h2>And a...</h2>
-      </div>
+      </section>
       <NewYearApp />
     </main>
   );

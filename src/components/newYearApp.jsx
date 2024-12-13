@@ -33,10 +33,10 @@ function NewYearApp() {
   }, []);
 
   return (
-    <div className="new_year">
+    <section className="new_year">
       <NewYearGreeting isVisible={isVisible} />
       <Stars />
-    </div>
+    </section>
   );
 }
 export default NewYearApp;
