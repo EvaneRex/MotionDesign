@@ -90,7 +90,7 @@ h2 {
 }
 
 .new_year {
-  height: 102vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,6 +113,6 @@ h2 {
 .new_year .stars {
   position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   mix-blend-mode: luminosity;
 }/*# sourceMappingURL=style.css.map */

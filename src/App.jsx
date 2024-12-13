@@ -1,14 +1,39 @@
 import NewYearApp from "./components/newYearApp";
 import ChristmasApp from "./components/christmasApp";
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: "main",
+      start: "top top",
+      end: "bottom bottom",
+      snap: {
+        snapTo: 1 / 2,
+        duration: 1,
+        ease: "power3.out",
+        scrub: true,
+      },
+      markers: true,
+    });
+    return () => ScrollTrigger.killAll();
+  }, []);
+
   return (
-    <main>
-      <ChristmasApp />
-      <section className="middle">
+    <main className="snap-container">
+      <div className="snap-section">
+        <ChristmasApp />
+      </div>
+      <div className="middle snap-section">
         <h2>And a...</h2>
-      </section>
-      <NewYearApp />
+      </div>
+      <div className="snap-sektion">
+        <NewYearApp />
+      </div>
     </main>
   );
 }
