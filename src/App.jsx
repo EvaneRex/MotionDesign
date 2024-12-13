@@ -28,8 +28,8 @@ function App() {
       end: "bottom bottom", // Ends the trigger when the bottom of main reaches the bottom of the viewport
       snap: {
         snapTo: 1 / 2, // Snaps to the center of the page, tried with the 1/3 since there are 3 sektions but that makes it wierd and choppy
-        duration: 1, // Duration of the snapping
-        ease: "power3.out",
+        duration: 0.2, // Duration of the snapping
+        ease: "power1.out",
         scrub: true,
       },
       // markers: true, // For debugging
