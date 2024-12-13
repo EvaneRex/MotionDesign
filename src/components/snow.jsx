@@ -1,14 +1,21 @@
+/**
+ * Snow component:
+ * This component renders and animates the snowflakes falling from the top of the viewport.
+ * Each snowflake has a random size, opacity and horizontal drift to make it more organic. The animation is triggered when the snow container enteres the viewport and pauses when it leaves.
+ * The snow animation also restarts when scrolling back into view.
+ */
+
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger"; // Importing the ScrollTrigger plugin
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 // Notes from https://codepen.io/rohaidAli/pen/KKJjgpm?editors=1010 with adjustments.
 
-// Registers the plugin
+// Register plugin
 gsap.registerPlugin(ScrollTrigger);
 
 const Snow = () => {
-  const snowContainerRef = useRef(null);
+  const snowContainerRef = useRef(null); // Ref for the container
 
   useEffect(() => {
     const container = snowContainerRef.current; // Gets the DOM element for the container
@@ -19,15 +26,15 @@ const Snow = () => {
     // Creates and appends the snowflakes to the container
     for (let i = 0; i < 80; i++) {
       const snowflake = document.createElement("div");
-      snowflake.className = "snowflake";
+      snowflake.className = "snowflake"; // Styling is found in the scss
       snowflake.style.left = `${Math.random() * 100}vw`; // Random horizontal position
       snowflake.style.width = `${5 + Math.random() * 10}px`; // Random size for snowflakes
-      snowflake.style.height = snowflake.style.width; // Ensure snowflakes are round
+      snowflake.style.height = snowflake.style.width; // Ensure snowflakes has the same height and width
       container.appendChild(snowflake);
-      snowflakes.push(snowflake);
+      snowflakes.push(snowflake); // Pushes the snowflakes to the array
     }
 
-    // Animate each of the snowflakes
+    // GSAP animation: Animation for each of the snowflakes
     const animations = snowflakes.map((snowflake) => {
       // Random fall distance and duration
       const fallDistance = 40 + Math.random() * 20; // The vertical distance
@@ -53,24 +60,25 @@ const Snow = () => {
       );
     });
 
-    // Scroll using the ScrollTrigger plugin, to ensure that the snow animations only run when the container is in view
+    // ScrollTrigger plugin: Ensures that the snow stops and restars depending on the position in the viewport.
     ScrollTrigger.create({
       trigger: container,
       start: "top bottom", // Starts when the top of the container enters the viewport
-      end: "bottom 50%", // Ends when the bottom of the container leaves the viewport
+      end: "bottom 70%", // Ends when the bottom of the container leaves the viewport
       onEnter: () => {
-        animations.forEach((anim) => anim.play()); // Resume animations when entering the view
+        animations.forEach((anim) => anim.play()); // Plays animations when entering the view
         gsap.to(container, {
           visibility: "visible",
           opacity: 1,
           duration: 0.5,
           ease: "power1.out",
-        }); // Ensure container is visible with easing
+        });
       },
       onLeave: () => {
         animations.forEach((anim) => anim.pause()); // Pause animations when leaving the view
         gsap.to(container, {
           opacity: 0,
+          // Fades the container out
           duration: 0.2,
           ease: "power1.in",
           onComplete: () => gsap.set(container, { visibility: "hidden" }),
@@ -96,10 +104,10 @@ const Snow = () => {
       },
     });
 
-    // Cleanup function to revert animations and unregister ScrollTrigger
+    // Cleanup function to remove animations and ScrollTrigger when the component unmounts
     return () => {
       animations.forEach((anim) => anim.kill()); // Kill all animations
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); // Remove ScrollTrigger instances
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill()); // Kill all ScrollTrigger animations
     };
   }, []); // Only runs once when the component is mounted
 

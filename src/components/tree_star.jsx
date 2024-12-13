@@ -1,20 +1,21 @@
 /**
- *  This is the tree_star component. Its responsible for rendering the tree and the star on top of it, it also mangages the animation for the star.
+ * Tree component:
+ * This component contains the tree svg, its places in using the svg code so the star could be animated.
+ * The animation makes the star rotate around its center when/if the user hoovers over it. It like a little easter egg for those curious.
  */
 
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 export default function Tree() {
-  const starRef = useRef(null);
+  const starRef = useRef(null); // Ref for the star
 
   // GSAP animation: Makes the star rotate around its center and swing back and forth on hover!
-  useGSAP(() => {
+  useEffect(() => {
     const animation = gsap.to(starRef.current, {
       duration: 0.6,
-      repeat: -1,
-      yoyo: true,
+      repeat: -1, // Repeats infinitely
+      yoyo: true, // Reverses the animation when it reaches the end
       ease: "sine.inOut",
       rotation: 6,
       startAt: { rotation: -4 }, // Starts the animation further out. Ensures thats the animation is symmetrical
@@ -26,15 +27,19 @@ export default function Tree() {
     const handleMouseOver = () => animation.play(); // Starts the animation
     const handleMouseOut = () => animation.pause(); // Ends the animation
 
-    // Stores the starRef in a variable
+    // Add event listeners for mouse hover
     const starElement = starRef.current;
+    if (starElement) {
+      starElement.addEventListener("mouseover", handleMouseOver);
+      starElement.addEventListener("mouseout", handleMouseOut);
+    }
 
-    // Adding and removing eventlisteners.
-    starElement.addEventListener("mouseover", handleMouseOver);
-    starElement.addEventListener("mouseout", handleMouseOut);
+    // Cleanup event listeners when the component is unmounted
     return () => {
-      starElement.removeEventListener("mouseover", handleMouseOver);
-      starElement.removeEventListener("mouseout", handleMouseOut);
+      if (starElement) {
+        starElement.removeEventListener("mouseover", handleMouseOver);
+        starElement.removeEventListener("mouseout", handleMouseOut);
+      }
     };
   }, []);
 

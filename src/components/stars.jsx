@@ -1,8 +1,13 @@
+/**
+ * Stars component:
+ * This component renders and animates the stars with a twinkle effect, it only runs when the new year box is visible. The code is based on the snow components code.
+ */
+
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 const Stars = ({ count = 100 }) => {
-  const starContainerRef = useRef(null);
+  const starContainerRef = useRef(null); // Ref for the container
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
   // This updates the container, so the stars always fill it when the window is resized
@@ -20,8 +25,7 @@ const Stars = ({ count = 100 }) => {
     // Adds event listener for window resize and calls the updateContainerSize
     window.addEventListener("resize", updateContainerSize);
     return () => {
-      // Cleanup function for when the component unmounts. Relevant as it uses useEffect and not useGSAP (which has the cleanup in it).
-      window.removeEventListener("resize", updateContainerSize);
+      window.removeEventListener("resize", updateContainerSize); // Clean up
     };
   }, []); // Only runs once when the component is mounted
 
@@ -99,17 +103,16 @@ const Stars = ({ count = 100 }) => {
     window.addEventListener("scroll", checkVisibility);
     window.addEventListener("resize", checkVisibility);
 
-    // Initial visibility check
-    checkVisibility();
+    checkVisibility(); // Checks for visibility
 
-    // Cleanup function to remove event listeners
+    // Cleanup up
     return () => {
       window.removeEventListener("scroll", checkVisibility);
       window.removeEventListener("resize", checkVisibility);
     };
   }, [count, containerSize]); // Dependencies: It reruns when the count is changed in the code or when the window is resized
 
-  return <div ref={starContainerRef} className="stars"></div>;
+  return <div ref={starContainerRef} className="star-container"></div>;
 };
 
 export default Stars;
