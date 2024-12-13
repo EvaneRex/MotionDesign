@@ -51,6 +51,37 @@ h2 {
   opacity: 0.8;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
+.christmas #tree {
+  position: absolute;
+  bottom: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  height: 50vh;
+  width: auto;
+}
+.christmas #tree .treeStar {
+  fill: #ffec5f;
+}
+.christmas #tree .cls-2 {
+  fill: #f2f2f2;
+}
+.christmas #tree .cls-3 {
+  fill: #3f2500;
+}
+.christmas #tree .cls-4 {
+  fill: #234b2c;
+}
+.christmas #tree .cls-5 {
+  fill: #e6e6e6;
+}
+.christmas .landscape {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+}
 
 .new_year {
   height: 102vh;
@@ -78,53 +109,4 @@ h2 {
   width: 100%;
   height: 100vh;
   mix-blend-mode: luminosity;
-}
-
-#tree {
-  position: absolute;
-  bottom: 1%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  height: 50vh;
-  width: auto;
-}
-#tree .treeStar {
-  fill: #ffec5f;
-}
-#tree .cls-2 {
-  fill: #f2f2f2;
-}
-#tree .cls-3 {
-  fill: #3f2500;
-}
-#tree .cls-4 {
-  fill: #234b2c;
-}
-#tree .cls-5 {
-  fill: #e6e6e6;
-}
-
-#foreground {
-  fill: #f5f8ff;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: auto;
-  z-index: 2;
-}
-
-#middleground {
-  fill: #dcdce2;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: auto;
-  z-index: 1;
-}
-
-.transitionBox {
-  width: 100%;
-  height: 8rem;
-  background: linear-gradient(rgb(245, 248, 255) 15%, rgba(10, 15, 20, 0.5) 100%);
 }/*# sourceMappingURL=style.css.map */

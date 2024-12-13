@@ -39,7 +39,7 @@ function ChristmasApp() {
       <ChristmasGreeting isVisible={isVisible} />
       <Tree />
       <Snow />
-      <Landscape />
+      <img src=".\src\assets\landscape.svg" alt="" className="landscape" />
     </div>
   );
 }

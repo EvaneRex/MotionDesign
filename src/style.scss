@@ -58,6 +58,46 @@ h2 {
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
     }
   }
+  //This is for the tree
+  #tree {
+    position: absolute;
+    bottom: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    height: 50vh;
+    width: auto;
+
+    .treeStar {
+      fill: #ffec5f;
+    }
+
+    .cls-2 {
+      fill: #f2f2f2;
+    }
+
+    .cls-3 {
+      fill: #3f2500;
+    }
+
+    .cls-4 {
+      fill: #234b2c;
+    }
+
+    .cls-5 {
+      fill: #e6e6e6;
+    }
+  }
+
+  // This is the landscape underneath
+
+  .landscape {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+  }
 }
 .new_year {
   height: 102vh;
@@ -94,62 +134,4 @@ h2 {
     height: 100vh;
     mix-blend-mode: luminosity;
   }
-}
-
-//This is for the tree
-#tree {
-  position: absolute;
-  bottom: 1%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  height: 50vh;
-  width: auto;
-
-  .treeStar {
-    fill: #ffec5f;
-  }
-
-  .cls-2 {
-    fill: #f2f2f2;
-  }
-
-  .cls-3 {
-    fill: #3f2500;
-  }
-
-  .cls-4 {
-    fill: #234b2c;
-  }
-
-  .cls-5 {
-    fill: #e6e6e6;
-  }
-}
-
-// This is the landscape underneath
-#foreground {
-  fill: #f5f8ff;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: auto;
-  z-index: 2;
-}
-#middleground {
-  fill: #dcdce2;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: auto;
-  z-index: 1;
-}
-
-.transitionBox {
-  width: 100%;
-  height: 8rem;
-  background: linear-gradient(
-    rgb(245, 248, 255) 15%,
-    rgba(10, 15, 20, 0.5) 100%
-  );
 }

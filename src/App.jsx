@@ -5,7 +5,6 @@ function App() {
   return (
     <main>
       <ChristmasApp />
-      <div className="transitionBox"></div>
       <NewYearApp />
     </main>
   );
