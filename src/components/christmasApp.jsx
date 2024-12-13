@@ -1,6 +1,5 @@
 import { useGSAP } from "@gsap/react";
 import ChristmasGreeting from "./christmasTxt";
-import Landscape from "./landscape";
 import Snow from "./snow";
 import Tree from "./tree_star";
 import gsap from "gsap";

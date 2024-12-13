@@ -57,7 +57,7 @@ const Snow = () => {
     ScrollTrigger.create({
       trigger: container,
       start: "top bottom", // Starts when the top of the container enters the viewport
-      end: "bottom 30%", // Ends when the bottom of the container leaves the viewport
+      end: "bottom 50%", // Ends when the bottom of the container leaves the viewport
       onEnter: () => {
         animations.forEach((anim) => anim.play()); // Resume animations when entering the view
         gsap.to(container, {
