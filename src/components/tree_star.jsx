@@ -4,14 +4,15 @@
  * The animation makes the star rotate around its center when/if the user hoovers over it. It like a little easter egg for those curious.
  */
 
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export default function Tree() {
   const starRef = useRef(null); // Ref for the star
 
   // GSAP animation: Makes the star rotate around its center and swing back and forth on hover!
-  useEffect(() => {
+  useGSAP(() => {
     const animation = gsap.to(starRef.current, {
       duration: 0.6,
       repeat: -1, // Repeats infinitely

@@ -8,7 +8,7 @@
 
 import NewYearApp from "./components/newYearApp";
 import ChristmasApp from "./components/christmasApp";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import InBetween from "./components/between";
@@ -38,7 +38,7 @@ function App() {
   }, []);
 
   // Scroll visibility check: Checks if the InBetween is in view (the other components have this logic within themselves). This is for the animation activating for the text.
-  useGSAP(() => {
+  useEffect(() => {
     const handleScroll = () => {
       const middleElement = document.querySelector(".middle"); // Targeting the middle class
       if (middleElement) {

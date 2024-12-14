@@ -10,9 +10,8 @@
 import NewYearGreeting from "./newYearGreeting";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Stars from "./stars";
-import { useGSAP } from "@gsap/react";
 
 // Register plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -22,7 +21,7 @@ function NewYearApp() {
   const newYearRef = useRef(null); // Ref for the new years scene
 
   // Scroll visibility check: Checks if the scene is in the viewport
-  useGSAP(() => {
+  useEffect(() => {
     const handleScroll = () => {
       const newYearElement = newYearRef.current; // Targets the ref
       if (newYearElement) {

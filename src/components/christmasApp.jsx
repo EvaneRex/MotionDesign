@@ -11,13 +11,12 @@
  * <img />: Adds a landscape for visual interes.
  */
 
-import { useGSAP } from "@gsap/react";
 import ChristmasGreeting from "./christmasTxt";
 import Snow from "./snow";
 import Tree from "./tree_star";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Register plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -26,7 +25,7 @@ function ChristmasApp() {
   const [isVisible, setVisible] = useState(false); // Visibility check for the <ChristmasGreeting /> component
   const christmasRef = useRef(null); // Ref for the christmas scene
 
-  useGSAP(() => {
+  useEffect(() => {
     const handleScroll = () => {
       const element = christmasRef.current; // Targets the ref
       if (element) {
