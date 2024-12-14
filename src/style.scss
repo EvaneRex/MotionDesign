@@ -3,24 +3,29 @@
   padding: 0;
   box-sizing: border-box;
 }
+// Import of the font from the assets folder
 @font-face {
   font-family: "Lobster";
   src: url(./assets/Lobster-Regular.ttf);
 }
 
+// Ensures that the snow and stars dont overflow
 .body {
   overflow-x: hidden;
 }
 
+// Headings styling, this is just generally some might have different styling or attributes in their 'scene'
 h1,
 h2 {
-  font-family: "Lobster";
+  font-family: "Lobster"; // Kinda modern, kinda old school holiday type font
   font-size: 2.5rem;
   color: white;
   letter-spacing: 0.1rem;
   text-align: center;
   z-index: 50;
 }
+
+// This is the styling for the christmas scene
 .christmas {
   height: 100vh;
   background: radial-gradient(
@@ -45,7 +50,7 @@ h2 {
     pointer-events: none; // Allow clicks through the snowfall
     overflow: hidden;
     z-index: 4;
-    mix-blend-mode: screen;
+    mix-blend-mode: screen; // Adds a little something, its very subtle
 
     .snowflake {
       position: absolute;
@@ -54,9 +59,10 @@ h2 {
       height: 10px;
       background: white;
       border-radius: 50%;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); // Creates a slight haxy, glowing effect
     }
   }
+
   //This is for the tree
   #tree {
     position: absolute;
@@ -89,7 +95,6 @@ h2 {
   }
 
   // This is the landscape underneath
-
   .landscape {
     position: absolute;
     bottom: 0;
@@ -98,14 +103,22 @@ h2 {
     z-index: 2;
   }
 }
+
+// This is the InBetween styling, very simple to balance the whole thing out
 .middle {
-  background-color: rgb(1, 55, 88);
+  background-color: rgb(
+    1,
+    55,
+    88
+  ); // color taken from the sky, which both the other scenes use
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+// This is the styling for the new year scene
 .new_year {
   height: 100vh;
   display: flex;
@@ -120,7 +133,7 @@ h2 {
     rgb(21, 109, 105) 100%
   );
 
-  // For adding 2025 behind the text WIP
+  // For adding 2025 behind the text WIP, saw this done in both vidoes and different codepens and thought it was cool. And it makes it easy to adjust year by year without disturbing other elements.
   h2::before {
     position: absolute;
     top: -80%;
@@ -128,18 +141,19 @@ h2 {
     transform: translateX(-50%);
     content: "2025";
     font-size: 7.5rem;
-    color: transparent;
+    color: transparent; // Ensures the effect of only the outline/stroke is in focus
     z-index: -1;
-    -webkit-text-stroke: #ff0000 1px;
-    font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 0.2rem;
+    -webkit-text-stroke: #ff0000 1px; // Adds a stroke to the text
+    font-family: Arial, Helvetica, sans-serif; // Good contrast to the lobster font, very square and straight
+    letter-spacing: 0.2rem; // To add a little bit of space, making a better contrast between foreground text and background text
   }
 
+  // This is for the stars container
   .star-container {
     position: absolute;
-    width: 98%;
+    width: 98%; // Just to be sure the animation, where they grow/twinkle doesnt go over the viewport
     height: 98%;
-    mix-blend-mode: luminosity;
+    mix-blend-mode: luminosity; // Adds a little effect but its subtle but still nice
     z-index: 0;
   }
 }
