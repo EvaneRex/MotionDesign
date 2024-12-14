@@ -28,7 +28,7 @@ h2 {
 }
 .christmas h1 {
   position: relative;
-  top: 10%;
+  top: 15%;
 }
 .christmas .snow-container {
   position: fixed;
@@ -108,7 +108,7 @@ h2 {
   font-size: 7.5rem;
   color: transparent;
   z-index: -1;
-  -webkit-text-stroke: #ff0000 1px;
+  -webkit-text-stroke: #fdc11c 1px;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 0.2rem;
 }
@@ -118,4 +118,31 @@ h2 {
   height: 98%;
   mix-blend-mode: luminosity;
   z-index: 0;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  h1,
+  h2 {
+    font-size: 3.5rem;
+  }
+  .christmas #tree {
+    height: 60vh;
+  }
+  .new_year h2::before {
+    top: -55%;
+    font-size: 8.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  h1,
+  h2 {
+    font-size: 5.5rem;
+  }
+  .christmas #tree {
+    height: 65vh;
+  }
+  .new_year h2::before {
+    top: -100%;
+    font-size: 18.5rem;
+  }
 }/*# sourceMappingURL=style.css.map */

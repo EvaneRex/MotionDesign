@@ -37,7 +37,7 @@ h2 {
   ); // For the background, this enables control of where the center of the radial is positioned. The colors also gets to be controlled by stating where the the colors should start
   h1 {
     position: relative;
-    top: 10%;
+    top: 15%;
   }
 
   // This is for the snow
@@ -143,7 +143,7 @@ h2 {
     font-size: 7.5rem;
     color: transparent; // Ensures the effect of only the outline/stroke is in focus
     z-index: -1;
-    -webkit-text-stroke: #ff0000 1px; // Adds a stroke to the text
+    -webkit-text-stroke: #fdc11c 1px; // Adds a stroke to the text
     font-family: Arial, Helvetica, sans-serif; // Good contrast to the lobster font, very square and straight
     letter-spacing: 0.2rem; // To add a little bit of space, making a better contrast between foreground text and background text
   }
@@ -155,5 +155,44 @@ h2 {
     height: 98%;
     mix-blend-mode: luminosity; // Adds a little effect but its subtle but still nice
     z-index: 0;
+  }
+}
+
+// For tablets and up to small laptops
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  h1,
+  h2 {
+    font-size: 3.5rem;
+  }
+  .christmas {
+    #tree {
+      height: 60vh;
+    }
+  }
+
+  .new_year {
+    h2::before {
+      top: -55%;
+      font-size: 8.5rem;
+    }
+  }
+}
+
+// For larger laptops and screens
+@media screen and (min-width: 1024px) {
+  h1,
+  h2 {
+    font-size: 5.5rem;
+  }
+  .christmas {
+    #tree {
+      height: 65vh;
+    }
+  }
+  .new_year {
+    h2::before {
+      top: -100%;
+      font-size: 18.5rem;
+    }
   }
 }
