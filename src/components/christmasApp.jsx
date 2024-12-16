@@ -14,12 +14,7 @@
 import ChristmasGreeting from "./christmasTxt";
 import Snow from "./snow";
 import Tree from "./tree_star";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
-
-// Register plugin
-gsap.registerPlugin(ScrollTrigger);
 
 function ChristmasApp() {
   const [isVisible, setVisible] = useState(false); // Visibility check for the <ChristmasGreeting /> component
@@ -47,7 +42,7 @@ function ChristmasApp() {
   }, []);
 
   return (
-    <section className="christmas">
+    <section className="christmas" ref={christmasRef}>
       <ChristmasGreeting isVisible={isVisible} />
       <Tree />
       <Snow />

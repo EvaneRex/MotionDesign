@@ -13,35 +13,41 @@ export default function Tree() {
 
   // GSAP animation: Makes the star rotate around its center and swing back and forth on hover!
   useGSAP(() => {
-    const animation = gsap.to(starRef.current, {
-      duration: 0.6,
-      repeat: -1, // Repeats infinitely
-      yoyo: true, // Reverses the animation when it reaches the end
-      ease: "sine.inOut",
-      rotation: 6,
-      startAt: { rotation: -4 }, // Starts the animation further out. Ensures thats the animation is symmetrical
-      transformOrigin: "center", // What makes it rotate at its center
-      paused: true,
-    });
+    // ctx = context, its for cleanup
+    const ctx = gsap.context(() => {
+      const animation = gsap.to(starRef.current, {
+        duration: 0.6,
+        repeat: -1, // Repeats infinitely
+        yoyo: true, // Reverses the animation when it reaches the end
+        ease: "sine.inOut",
+        rotation: 6,
+        startAt: { rotation: -4 }, // Starts the animation further out. Ensures that's the animation is symmetrical
+        transformOrigin: "center", // What makes it rotate at its center
+        paused: true,
+      });
 
-    // Function to handle mouseover and mouseout events
-    const handleMouseOver = () => animation.play(); // Starts the animation
-    const handleMouseOut = () => animation.pause(); // Ends the animation
+      // Function to handle mouseover and mouseout events
+      const handleMouseOver = () => animation.play(); // Starts the animation
+      const handleMouseOut = () => animation.pause(); // Ends the animation
 
-    // Add event listeners for mouse hover
-    const starElement = starRef.current;
-    if (starElement) {
-      starElement.addEventListener("mouseover", handleMouseOver);
-      starElement.addEventListener("mouseout", handleMouseOut);
-    }
-
-    // Cleanup event listeners when the component is unmounted
-    return () => {
+      // Add event listeners for mouse hover
+      const starElement = starRef.current;
       if (starElement) {
-        starElement.removeEventListener("mouseover", handleMouseOver);
-        starElement.removeEventListener("mouseout", handleMouseOut);
+        starElement.addEventListener("mouseover", handleMouseOver);
+        starElement.addEventListener("mouseout", handleMouseOut);
       }
-    };
+
+      // Cleanup event listeners when the component is unmounted
+      return () => {
+        if (starElement) {
+          starElement.removeEventListener("mouseover", handleMouseOver);
+          starElement.removeEventListener("mouseout", handleMouseOut);
+        }
+      };
+    }, starRef); // Bind the context to the starRef DOM element
+
+    // Cleanup
+    return () => ctx.revert();
   }, []);
 
   return (

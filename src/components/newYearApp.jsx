@@ -8,13 +8,8 @@
  * <Stars />: Animated stars for ambiance
  */
 import NewYearGreeting from "./newYearGreeting";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
 import Stars from "./stars";
-
-// Register plugin
-gsap.registerPlugin(ScrollTrigger);
 
 function NewYearApp() {
   const [isVisible, setVisible] = useState(false); // Visibility check for the <NewYearGreeting />
