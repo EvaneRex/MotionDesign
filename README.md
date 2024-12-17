@@ -60,4 +60,6 @@ npm run dev
 
 A localhost link will appear, and clicking on it will open the project in your preferred browser.
 
+## Final
+
 Now you're ready to explore the project, which is built using components. App.jsx handles three main components, each of which manages its own scene. I hope this project gives an insight into using React with GSAP and the effects motion design can have on websites.
